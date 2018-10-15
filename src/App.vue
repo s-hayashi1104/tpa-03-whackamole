@@ -9,22 +9,22 @@
       Start Game
     </button>
     <div class="counters-container">
-      <counter></counter>
-      <counter></counter>
-      <counter></counter>
+      <Counter></Counter>
+      <Counter></Counter>
+      <Counter></Counter>
     </div>
-    <moles></moles>
+    <Moles></Moles>
   </div>
 </template>
 
 <script>
-import counter from './components/counter';
-import moles from './components/moles';
+import Counter from './components/Counter';
+import Moles from './components/Moles';
 export default {
   name: 'App',
   components: {
-    counter,
-    moles,
+    Counter,
+    Moles,
   }
 };
 </script>

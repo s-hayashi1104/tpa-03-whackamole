@@ -1,18 +1,18 @@
 <template>
   <div class="moles-container gameActive">
-      <mole></mole>
-      <mole></mole>
-      <mole></mole>
-      <mole></mole>
+      <Mole></Mole>
+      <Mole></Mole>
+      <Mole></Mole>
+      <Mole></Mole>
   </div>
 </template>
 
 <script>
-import mole from './mole';
+import Mole from './Mole';
 export default {
-  name: 'moles',
+  name: 'Moles',
   components: {
-    moles,
+    Mole,
   }
 };
 </script>
