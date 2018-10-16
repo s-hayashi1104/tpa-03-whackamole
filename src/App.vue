@@ -9,9 +9,9 @@
       Start Game
     </button>
     <div class="counters-container">
-      <Counter :value="score" ></Counter>
-      <Counter :value="highScore"></Counter>
-      <Counter :value="timer"></Counter>
+      <Counter title='score' :value="score" ></Counter>
+      <Counter title='highScore' :value="highScore"></Counter>
+      <Counter title='timer' :value="timer"></Counter>
     </div>
     <Moles></Moles>
   </div>
