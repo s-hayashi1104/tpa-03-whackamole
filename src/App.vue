@@ -13,7 +13,7 @@
       <Counter title='highScore' :value="highScore"></Counter>
       <Counter title='timer' :value="timer"></Counter>
     </div>
-    <Moles :value='moles'></Moles>
+    <Moles :value='moles, gameActive'></Moles>
   </div>
 </template>
 

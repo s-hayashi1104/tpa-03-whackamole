@@ -1,9 +1,6 @@
 <template>
-  <div class="moles-container gameActive">
-      <Mole :value='isActive'></Mole>
-      <Mole :value='isActive'></Mole>
-      <Mole :value='isActive'></Mole>
-      <Mole :value='isActive'></Mole>
+  <div :class="{ 'moles-container': isActive }">
+      <Mole v-for='mole in moles' :key="mole"></Mole>
   </div>
 </template>
 
@@ -11,7 +8,10 @@
 import Mole from './Mole';
 export default {
   name: 'Moles',
-  props: 'isActive',
+  props: {
+    moles: 'moles',
+    isActive: 'gameActive',
+  },
   components: {
     Mole,
   }
