@@ -1,9 +1,9 @@
 <template>
   <div class="moles-container gameActive">
-      <Mole></Mole>
-      <Mole></Mole>
-      <Mole></Mole>
-      <Mole></Mole>
+      <Mole :value='isActive'></Mole>
+      <Mole :value='isActive'></Mole>
+      <Mole :value='isActive'></Mole>
+      <Mole :value='isActive'></Mole>
   </div>
 </template>
 
@@ -11,6 +11,7 @@
 import Mole from './Mole';
 export default {
   name: 'Moles',
+  props: 'isActive',
   components: {
     Mole,
   }
