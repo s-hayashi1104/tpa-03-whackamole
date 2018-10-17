@@ -1,6 +1,8 @@
 <template>
   <div :class="{ 'moles-container': isActive }">
-      <Mole v-for='mole in moles' :key="mole"></Mole>
+    <template v-for='(mole, index) in moles' >
+      <Mole :key="index"></Mole>
+    </template>
   </div>
 </template>
 
@@ -8,10 +10,7 @@
 import Mole from './Mole';
 export default {
   name: 'Moles',
-  props: {
-    moles: 'moles',
-    isActive: 'gameActive',
-  },
+  props: ['moles', 'isActive'] ,
   components: {
     Mole,
   }
@@ -19,16 +18,15 @@ export default {
 </script>
    
 
-<style>
+<style lang="scss">
 .moles-container {
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
   opacity: 0.5;
   transition: opacity 0.3s ease;
-}
-
-.moles-container.game-active {
-  opacity: 1;
+  &.game-active{
+    opacity: 1;
+  }
 }
 </style>
