@@ -13,7 +13,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .mole-container {
   width: 160px;
   height: 160px;

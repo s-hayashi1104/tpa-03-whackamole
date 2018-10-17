@@ -12,7 +12,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .counter {
   border: 1px solid #000;
   margin-top: 20px;

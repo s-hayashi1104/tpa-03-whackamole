@@ -13,7 +13,7 @@
       <Counter title='highScore' :value="highScore"></Counter>
       <Counter title='timer' :value="timer"></Counter>
     </div>
-    <Moles></Moles>
+    <Moles :moles='moles' :isActive='gameActive'></Moles>
   </div>
 </template>
 
@@ -38,7 +38,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .whackamole {
   font-family: 'Bungee', sans-serif;
   max-width: 960px;
