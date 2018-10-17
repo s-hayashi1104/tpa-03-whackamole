@@ -18,7 +18,7 @@ export default {
 </script>
    
 
-<style lang="scss">
+<style lang="scss" scoped>
 .moles-container {
   margin-top: 20px;
   display: flex;

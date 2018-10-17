@@ -38,7 +38,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .whackamole {
   font-family: 'Bungee', sans-serif;
   max-width: 960px;
