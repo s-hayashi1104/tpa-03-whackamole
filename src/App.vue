@@ -5,7 +5,7 @@
     </h1>
     <button
       class="start-game"
-    >
+    @click= "startTimer">
       Start Game
     </button>
     <div class="counters-container">
@@ -25,6 +25,18 @@ export default {
   components: {
     Counter,
     Moles,
+  },
+  methods:{
+    startGame: function(){},
+    endGame: function(){},
+    startTimer: function(){
+      let time = setInterval(function(){
+        this.timer - 1;
+        if (time === 0) { 
+          clearInterval(time);
+        }
+      }, 1000);
+    },
   },
   data: function() {
     return {
