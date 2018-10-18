@@ -27,10 +27,19 @@ export default {
     Moles,
   },
   methods:{
+    resetData: function(){
+      this.score = 0;
+      this.timer = 20;
+      this.moles =  [false, false, false, false];
+      this.gameActive = true;
+    },
     startGame: function(){
-      this.timerId = setInterval(this.startTimer.bind(this.timerId), 1000);
+      this.resetData();
+      this.gameActive = true;
+      this.timerId = setInterval(this.startTimer.bind(this), 1000);
     },
     endGame: function(){
+      this.gameActive = false;
       clearInterval(this.timerId);
     },
     startTimer: function(){
@@ -44,7 +53,7 @@ export default {
     return {
       score: 0,
       highScore: 0,
-      timer: 5,
+      timer: 20,
       timerId: 0,
       moles: [false, false, false, false],
       gameActive: false,
