@@ -35,8 +35,7 @@ export default {
     },
     startGame: function(){
       this.resetData();
-      this.gameActive = true;
-      this.timerId = setInterval(this.startTimer.bind(this), 1000);
+      this.timerId = setInterval(this.startTimer, 1000);
     },
     endGame: function(){
       this.gameActive = false;
