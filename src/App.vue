@@ -5,7 +5,7 @@
     </h1>
     <button
       class="start-game"
-    >
+    @click= "startGame">
       Start Game
     </button>
     <div class="counters-container">
@@ -26,11 +26,34 @@ export default {
     Counter,
     Moles,
   },
+  methods:{
+    resetData: function(){
+      this.score = 0;
+      this.timer = 20;
+      this.moles =  [false, false, false, false];
+      this.gameActive = true;
+    },
+    startGame: function(){
+      this.resetData();
+      this.timerId = setInterval(this.startTimer, 1000);
+    },
+    endGame: function(){
+      this.gameActive = false;
+      clearInterval(this.timerId);
+    },
+    startTimer: function(){
+      this.timer -= 1;
+      if (this.timer === 0){
+        this.endGame();
+      }
+    },
+  },
   data: function() {
     return {
       score: 0,
       highScore: 0,
       timer: 20,
+      timerId: 0,
       moles: [false, false, false, false],
       gameActive: false,
     };
