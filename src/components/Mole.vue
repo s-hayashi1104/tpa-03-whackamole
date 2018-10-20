@@ -1,7 +1,7 @@
 <template>
-  <div class="mole-container inactive">
+  <div :class="moleContainerHandle">
     <div class="mole-image-container">
-      <img class="mole" src="../assets/mole.png" alt="mole"/>
+      <img class="mole" src="../assets/mole.png" alt="mole" v-on:click="handleClick"/>
     </div>
       <img class="dirt" src="../assets/dirt.svg" alt="mole dirt"/>
   </div>
@@ -10,7 +10,23 @@
 <script>
 export default {
   name: 'Mole',
+  props: ['active', 'moleId'],
+  computed: {
+    moleContainerHandle: function(){
+      return {
+        'mole-container' : true,
+        'active' : this.active,
+        'inactive' : !this.active,
+      };
+    }
+  },
+  methods: {
+    handleClick: function() {
+      this.$emit('whack', this.moleId);
+    },
+  },
 };
+
 </script>
 
 <style scoped>
