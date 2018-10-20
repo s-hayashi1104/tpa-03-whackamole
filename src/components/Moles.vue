@@ -1,7 +1,10 @@
 <template>
-  <div :class="{ 'moles-container': isActive }">
-    <template v-for='(mole, index) in moles' >
-      <Mole :key="index"></Mole>
+  <div 
+  class="moles-container"
+  :class="handleContainer"
+  >
+    <template v-for='(moleActive, index) in moles' >
+      <Mole :key="index" :active="moleActive" @whack="handleWhack(index)"></Mole>
     </template>
   </div>
 </template>
@@ -10,7 +13,19 @@
 import Mole from './Mole';
 export default {
   name: 'Moles',
-  props: ['moles', 'isActive'] ,
+  props: ['moles', 'isActive'],
+  computed: {
+    handleContainer: function() {
+      return {
+        'game-active': this.isActive,
+      };
+    }
+  },
+  methods: {
+    handleWhack: function(index) {
+      this.$emit('whack', index);
+    },
+  },
   components: {
     Mole,
   }
