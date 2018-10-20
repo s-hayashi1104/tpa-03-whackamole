@@ -1,7 +1,7 @@
 <template>
   <div :class="moleContainerHandle">
     <div class="mole-image-container">
-      <img class="mole" src="../assets/mole.png" alt="mole" v-on:click="handleClick"/>
+      <img class="mole" src="../assets/mole.png" alt="mole" @click="handleClick"/>
     </div>
       <img class="dirt" src="../assets/dirt.svg" alt="mole dirt"/>
   </div>
