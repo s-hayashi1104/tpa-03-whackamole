@@ -1,5 +1,7 @@
 <template>
-  <div :class="moleContainerHandle">
+  <div 
+  class='mole-container'
+  :class="moleContainerHandle">
     <div class="mole-image-container">
       <img class="mole" src="../assets/mole.png" alt="mole" @click="handleClick"/>
     </div>
@@ -14,7 +16,6 @@ export default {
   computed: {
     moleContainerHandle: function(){
       return {
-        'mole-container' : true,
         'active' : this.active,
         'inactive' : !this.active,
       };
