@@ -4,8 +4,10 @@
       Whack-a-mole!
     </h1>
     <button
+      :class = "isState"
       class="start-game"
-    @click= "startGame">
+      @click= "startGame"
+      :disabled = "gameActive">
       Start Game
     </button>
     <div class="counters-container">
@@ -26,6 +28,13 @@ export default {
     Counter,
     Moles,
   },
+  computed: {
+    isState: function() {
+      return {
+        isState: this.gameActive,
+      };
+    }
+  },
   methods:{
     resetData: function(){
       this.score = 0;
@@ -34,18 +43,15 @@ export default {
       this.gameActive = true;
     },
     startGame: function(){
-      if (this.gameActive) {
-        return;
-      }
       this.resetData();
       this.timerId = setInterval(this.startTimer, 1000);
       this.appear();
     },
     endGame: function(){
-      this.gameActive = false;
-      clearInterval(this.timerId);
       this.stop();
+      clearInterval(this.timerId);
       this.updateHighScore();
+      this.gameActive = false;
     },
     updateHighScore() {
       this.highScore = Math.max(this.highScore, this.score);
@@ -115,6 +121,10 @@ export default {
   color: #fff;
   font-size: 1em;
   cursor: pointer;
+}
+
+.isState{
+  opacity: 0.5;
 }
 
 .counters-container {
